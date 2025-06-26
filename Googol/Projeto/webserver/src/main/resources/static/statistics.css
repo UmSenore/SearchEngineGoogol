@@ -1,0 +1,38 @@
+body {
+    background-color: #fff;
+}
+
+#main-content {
+    max-width: 940px;
+    padding: 2em 3em;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Centraliza a tabela de resultados */
+table.table-striped {
+    text-align: left;  /* Garante que o conteúdo dentro da tabela será centralizado */
+}
+
+/* Aplica ao <main> para centralizar seu conteúdo horizontalmente e posicionar a 1/3 da altura */
+.container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start;  /* Alinha o conteúdo no topo */
+    text-align: center;       /* Centraliza o texto dentro do conteúdo */
+}
+
+.bg-white {
+    width: 100%;              /* Define a largura do conteúdo */
+}
+
+h1 {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 3em;
+    margin-bottom: 0.25em;
+}
+

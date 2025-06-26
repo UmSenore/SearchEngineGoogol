@@ -1,0 +1,49 @@
+body {
+    background-color: #fff;
+}
+
+#main-content {
+    max-width: 940px;
+    padding: 2em 3em;
+    margin: 0 auto 20px;
+    background-color: #fff;
+    border: 1px solid #e5e5e5;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+}
+
+/* Centraliza a tabela de resultados */
+table.table-striped {
+    text-align: left;  /* Garante que o conteúdo dentro da tabela será centralizado */
+}
+
+/* Aplica ao <main> para centralizar seu conteúdo horizontalmente e posicionar a 1/3 da altura */
+.container {
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: flex-start;  /* Alinha o conteúdo no topo */
+    padding-top: 10%;         /* Ajusta o conteúdo para ficar a 1/3 da parte superior da página */
+    text-align: center;       /* Centraliza o texto dentro do conteúdo */
+}
+
+.bg-white {
+    width: 90%;              /* Define a largura do conteúdo */
+}
+
+form {
+    margin: 2% 0;  /* Adiciona margem superior e inferior de 20px */
+}
+
+h1 {
+    font-family: 'Helvetica Neue', Helvetica, sans-serif;
+    font-size: 10em;
+    letter-spacing: -0.14em; /* Espaçamento relativo ao tamanho da fonte */
+    margin-bottom: 0.25em;
+}
+
+.lead {
+    font-size: 1.5em;
+    color: #888
+}
+

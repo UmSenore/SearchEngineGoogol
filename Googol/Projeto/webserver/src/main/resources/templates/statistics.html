@@ -1,0 +1,96 @@
+<!-- <p th:text="'Pedido: ' + ${name} + '!'" /> -->
+<!-- <p th:text="${othername} " /> -->
+
+
+<!doctype html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#712cf9">
+    <title>Googol</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="/statistics.css">
+
+    <script src="https://cdn.jsdelivr.net/npm/sockjs-client@1/dist/sockjs.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/stomp.js/2.3.3/stomp.min.js"></script>
+    <script src="/stats.js"></script>
+
+    <style>
+        body {
+            min-height: 75rem;
+            padding-top: 4.5rem;
+        }
+    </style>
+</head>
+
+<!-- This example is based on bootstrap, a CSS framework: -->
+<!-- https://getbootstrap.com/docs/5.3/components -->
+
+<body class="d-flex flex-column h-100">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+
+<nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+    <div class="container-fluid">
+        <a class="navbar-brand ms-2" href="/">Googol</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse"
+                aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ms-auto me-3 mb-2 nav-underline">
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a id="statistics" class="nav-link active" aria-current href="/statistics">Statistics</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link"  href="/">Add URL</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+
+<main class="container">
+    <div class="bg-white p-5 rounded">
+        <h1>Statistics</h1>
+        <div class="col-md-12">
+            <div id="stats-container">
+                <h2>Top 10 de pesquisas mais comuns</h2>
+                <ul id="topSearches" class="list-group mb-4">
+                    <li th:each="search : ${topSearches}" class="list-group-item" th:text="${search}"></li>
+                </ul>
+
+                <h2>Barrels ativos</h2>
+                <table class="table table-bordered table-striped">
+                    <thead class="table-dark">
+                    <tr>
+                        <th>ID do Barrel</th>
+                        <th>Tamanho do Índice</th>
+                        <th>Tempo de Resposta (ms)</th>
+                    </tr>
+                    </thead>
+                    <tbody id="barrelsTableBody">
+                    <tr th:each="barrel : ${barrels}">
+                        <td th:text="${barrel.id}"></td>
+                        <td th:text="${barrel.indexSize}"></td>
+                        <td th:text="${barrel.responseTime}"></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</main>
+
+</body>
+
+</html>
