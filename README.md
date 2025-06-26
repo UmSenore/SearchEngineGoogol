@@ -1,5 +1,9 @@
 # Instruções para Execução
 
+## Mudanças no código
+
+-Altere a chave do google api para a sua chave. A chave atual não está em uso.
+
 ## Inicializando na pasta `/java`
 
 - Para executar o programa, utilize o script: `./build.sh`.
